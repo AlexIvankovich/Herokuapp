@@ -4,6 +4,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.time.Duration;
+
 public class BaseTest {
     WebDriver driver;
 
@@ -16,12 +18,11 @@ public class BaseTest {
         driver = new ChromeDriver(options);
 //        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 //        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
-
 }

@@ -24,7 +24,5 @@ public class AddRemoveElementsTest extends BaseTest {
         deleteButtons = driver.findElements(By.cssSelector(deleteButtonLocator));
 
         assertEquals(deleteButtons.size(), 1, "Количество элементов != 1");
-
-
     }
 }
